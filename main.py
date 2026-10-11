@@ -50,4 +50,9 @@ if __name__=="__main__":
     })
 
     answer = result["messages"][-1]
-    print(answer.content)
+    # print(answer.content)
+    if isinstance(answer,AIMessage) and answer.tool_calls:
+        print(answer.tool_calls[0]['args']['answer'])
+
+
+        # answer.tool_calls[0]['args']['answer']
