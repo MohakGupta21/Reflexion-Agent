@@ -50,7 +50,7 @@ revise_instructions = """Revise your previous answer using the new instruction.
 """
 
 revisor = actor_prompt_template.partial(
-    first_instructions=revise_instructions
+    first_instruction=revise_instructions
 ) | llm.bind_tools(tools=[ReviseAnswer], tool_choice="ReviseAnswer")
 
 if __name__=="__main__":
